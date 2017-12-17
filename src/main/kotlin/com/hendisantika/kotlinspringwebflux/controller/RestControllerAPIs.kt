@@ -24,20 +24,20 @@ import javax.annotation.PostConstruct
 @RestController
 @RequestMapping(value="/api/customer")
 class RestControllerAPIs {
-    val log = LoggerFactory.getLogger(RestControllerAPIs::class.java);
+    val log = LoggerFactory.getLogger(RestControllerAPIs::class.java)
 
     // Define customer storage
     val custStores = mutableMapOf<Long, Customer>()
 
     @PostConstruct
     fun initial(){
-        custStores.put(1, Customer(1, "Hendi", "Santika", 30, Address("Kolonel Madturi", "212")))
+        custStores.put(1, Customer(1, "Hendi", "Santika", 30, Address("Kolonel Masturi", "212")))
         custStores.put(2, Customer(2, "Uzumaki", "Naruto", 25, Address("Konohagakure", "412")))
     }
 
     @GetMapping
     fun getAll(): Flux<Customer> {
-        return Flux.fromIterable(ArrayList(custStores.values));
+        return Flux.fromIterable(ArrayList(custStores.values))
     }
 
     @GetMapping("/{id}")
@@ -58,7 +58,7 @@ class RestControllerAPIs {
     @PutMapping("/put/{id}")
     fun putCustomer(@PathVariable id: Long, @RequestBody customer: Customer): Mono<ResponseEntity<Customer>>{
         // reset customer.Id
-        customer.id = id;
+        customer.id = id
 
         if(custStores.get(id) != null){
             custStores.replace(id, customer)
