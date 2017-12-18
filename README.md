@@ -22,11 +22,11 @@ Copy this to your terminal :
 
 – Make a POST request: `http://localhost:8080/api/customer/post`
 
- ![Post Customer](post.png)
+ ![Post Customer](img/post.png)
 
 – Make a PUT request: http://localhost:8080/api/customer/put/3
 
-  ![Update Customer](put.png)
+  ![Update Customer](img/put.png)
 
 – Make a DELETE request: http://localhost:8080/api/customer/delete/1
 
